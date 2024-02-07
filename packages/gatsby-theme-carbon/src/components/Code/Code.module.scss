@@ -36,7 +36,8 @@
     'Bitstream Vera Sans Mono', Courier, monospace;
   width: calc(100% + 2rem);
   @include breakpoint('lg') {
-    width: calc(67% + 1.15rem);
+    width: calc(100% + 1rem);
+    padding-left: 1rem
   }
 }
 

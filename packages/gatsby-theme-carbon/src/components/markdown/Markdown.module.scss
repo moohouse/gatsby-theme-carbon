@@ -21,7 +21,7 @@
 
   // 8 col
   @include breakpoint('lg') {
-    width: 66.667%;
+    width: 100%;
   }
 }
 
@@ -53,7 +53,7 @@
   }
 
   @include breakpoint('lg') {
-    width: 66.667%;
+    width: 100%;
   }
 }
 
@@ -74,7 +74,7 @@
   }
 
   @include breakpoint('lg') {
-    width: 66.667%;
+    width: 100%;
   }
 }
 
@@ -176,7 +176,7 @@ ul :global(.cds--list--unordered) {
 .blockquote .paragraph--responsive {
   // 8 col
   @include breakpoint('lg') {
-    width: calc(66.667% - 3rem);
+    width: calc(100% - 3rem);
   }
 }
 

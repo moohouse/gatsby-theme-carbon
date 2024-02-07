@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'gatsby';
-import slugify from 'slugify';
+import slugify from 'cjk-slug';
 import cx from 'classnames';
 
 import {
@@ -18,7 +18,7 @@ export default class PageTabs extends React.Component {
     const currentTab = slug.split('/').filter(Boolean).slice(-1)[0];
 
     const pageTabs = tabs.map((tab) => {
-      const slugifiedTab = slugify(tab, { lower: true, strict: true });
+      const slugifiedTab = slugify(tab);
       const selected = slugifiedTab === currentTab;
       // matches with or without trailing slash: /?
       // matches with or without hash link: (#.*)?

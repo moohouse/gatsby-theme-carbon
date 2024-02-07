@@ -50,7 +50,7 @@ const MiniCard = ({
   );
 
   let isLink;
-  if (href !== undefined) {
+  if (href !== undefined && !href.startsWith("http")) {
     isLink = href.charAt(0) === '/';
   }
 
@@ -59,7 +59,7 @@ const MiniCard = ({
       {cardContent}
     </Link>
   ) : (
-    <a href={href} className="cds--tile--clickable" {...linkProps}>
+    <a href={href} className="cds--tile--clickable" target="_blank" {...linkProps}>
       {cardContent}
     </a>
   );

@@ -1,5 +1,5 @@
 import React from 'react';
-import slugify from 'slugify';
+import slugify from 'cjk-slug';
 import { useStaticQuery, graphql } from 'gatsby';
 
 import Utils from '../components/Utils';
@@ -45,7 +45,7 @@ const Default = ({ pageContext, children, location, Title }) => {
     if (!tabs) return '';
     return (
       slug.split('/').filter(Boolean).slice(-1)[0] ||
-      slugify(tabs[0], { lower: true })
+      slugify(tabs[0])
     );
   };
 

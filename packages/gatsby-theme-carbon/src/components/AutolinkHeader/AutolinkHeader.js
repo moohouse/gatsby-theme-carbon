@@ -3,7 +3,7 @@ import useMedia from 'use-media';
 import { breakpoints } from '@carbon/elements';
 import { Link } from '@carbon/react/icons';
 import cx from 'classnames';
-import slugify from 'slugify';
+import slugify from 'cjk-slug';
 
 import {
   header,
@@ -36,7 +36,7 @@ const AutolinkHeader = ({ is: Component, className, ...props }) => {
     (child) => (child.props ? child.props.children : child) // handle bold/italic words
   ).join('');
 
-  const id = `${slugify(string, { lower: true })}`;
+  const id = `${slugify(string)}`;
 
   const anchorPosition = () => (isMobile ? 'right' : 'left');
 

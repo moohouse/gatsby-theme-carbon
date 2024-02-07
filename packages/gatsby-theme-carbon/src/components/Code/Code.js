@@ -33,7 +33,7 @@ const Code = ({ children, className: classNameProp = '', path, src }) => {
   const getLines = (lines) => {
     const withoutTrailingEmpty = removeTrailingEmptyLine(lines);
 
-    if (withoutTrailingEmpty.length > 9) {
+    if (withoutTrailingEmpty.length > 100) {
       setHasMoreThanNineLines(true);
     }
 
@@ -41,7 +41,7 @@ const Code = ({ children, className: classNameProp = '', path, src }) => {
       return withoutTrailingEmpty;
     }
 
-    return withoutTrailingEmpty.slice(0, 9);
+    return withoutTrailingEmpty.slice(0, 100);
   };
 
   return (

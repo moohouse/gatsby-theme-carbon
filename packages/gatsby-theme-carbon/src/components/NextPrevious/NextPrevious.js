@@ -1,6 +1,6 @@
 import React from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
-import slugify from 'slugify';
+import slugify from 'cjk-slug';
 
 import NextPrevious from './NextPreviousStyles';
 
@@ -47,9 +47,7 @@ const getTabItems = ({ tabs, hrefSegments }) => {
   }
 
   const tabItems = tabs.map((title) => {
-    const slug = slugify(title, {
-      lower: true,
-    });
+    const slug = slugify(title);
     const currentTab =
       hrefSegments.filter((item) => item === slug).toString() === slug;
     return {
@@ -89,9 +87,7 @@ const getTitle = (pageContext) => {
   if (!pageContext.frontmatter.title) {
     return 'Home';
   }
-  return slugify(pageContext.frontmatter.title, {
-    lower: true,
-  });
+  return slugify(pageContext.frontmatter.title);
 };
 
 const getName = (category, title) => `${category}${title ? `: ${title}` : ''}`;

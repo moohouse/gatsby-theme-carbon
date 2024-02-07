@@ -16,7 +16,7 @@ const Footer = ({ Content, links, Logo }) => {
   const { site } = useStaticQuery(graphql`
     query BUILD_TIME_QUERY {
       site {
-        buildTime(formatString: "DD MMMM YYYY")
+        buildTimeZone
       }
     }
   `);
@@ -54,7 +54,7 @@ const Footer = ({ Content, links, Logo }) => {
             colMd={4}
             colSm={3}
             offsetLg={2}>
-            <Content buildTime={site.buildTime} />
+            <Content buildTime={site.buildTimeZone} />
           </Column>
         </Row>
         <Row>

@@ -2,8 +2,7 @@ import React, { useContext } from 'react';
 import { Link } from 'gatsby';
 import { Location } from '@reach/router';
 import cx from 'classnames';
-import useNetwork from 'react-use/lib/useNetwork';
-
+import useNetwork from 'react-use/lib/useNetworkState';
 import { SideNavLink, SideNavMenu, SideNavMenuItem } from '@carbon/react';
 
 import * as styles from './LeftNav.module.scss';
@@ -43,25 +42,25 @@ const LeftNavItem = (props) => {
           (item) => item.path.split('/')[1] === pathname.split('/')[1]
         );
 
-        if (items.length === 1) {
-          const to = items[0].path;
-          return (
-            <>
-              <SideNavLink
-                onClick={(e) => handleClick(e, to)}
-                icon={<span>dummy icon</span>}
-                element={Link}
-                className={cx({
-                  [styles.currentItem]: isActive,
-                })}
-                isActive={isActive}
-                to={to}>
-                {category}
-              </SideNavLink>
-              {hasDivider && <hr className={styles.divider} />}
-            </>
-          );
-        }
+        // if (items.length === 1) {
+        //   const to = items[0].path;
+        //   return (
+        //     <>
+        //       <SideNavLink
+        //         onClick={(e) => handleClick(e, to)}
+        //         icon={<span>dummy icon</span>}
+        //         element={Link}
+        //         className={cx({
+        //           [styles.currentItem]: isActive,
+        //         })}
+        //         isActive={isActive}
+        //         to={to}>
+        //         {category}
+        //       </SideNavLink>
+        //       {hasDivider && <hr className={styles.divider} />}
+        //     </>
+        //   );
+        // }
         return (
           <>
             <SideNavMenu

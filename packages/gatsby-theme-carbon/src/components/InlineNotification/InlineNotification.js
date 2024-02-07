@@ -36,7 +36,7 @@ const InlineNotification = ({ children, className, kind = 'info' }) => {
   return (
     <Row>
       <Column
-        colLg={8}
+        colLg={12}
         colMd={6}
         className={cx(styles.notification, className)}>
         <div className={containerClassName}>
